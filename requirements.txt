@@ -1,0 +1,16 @@
+# AI-CHA – Python backend dependencies
+#
+# Install with:
+#   pip install -r requirements.txt
+
+# Web framework
+fastapi==0.115.12
+
+# ASGI server (run with: uvicorn main:app --reload)
+uvicorn[standard]==0.34.0
+
+# Environment variable loading from .env files
+python-dotenv==1.1.0
+
+# OpenAI SDK (used by the /api/chat endpoint)
+openai==1.72.0

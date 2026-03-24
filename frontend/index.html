@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+  AI-CHA – Chat window frontend
+  ==============================
+  A single-page chat UI that talks to the FastAPI backend at /api/chat.
+
+  How to open:
+    Option A – through the FastAPI server (recommended):
+      Start the backend with `uvicorn main:app --reload` and visit
+      http://127.0.0.1:8000/
+
+    Option B – directly in the browser:
+      Open this file with your browser (file:// URL).
+      The backend must still be running at http://127.0.0.1:8000 so that
+      CORS requests to /api/chat succeed.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-CHA</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="chat-container">
+    <header class="chat-header">
+      <span class="chat-title">AI-CHA</span>
+      <span class="chat-subtitle">Your AI-powered assistant</span>
+    </header>
+
+    <!-- Message thread -->
+    <main class="chat-messages" id="chatMessages" aria-live="polite"></main>
+
+    <!-- Input area -->
+    <footer class="chat-input-area">
+      <textarea
+        id="userInput"
+        class="chat-input"
+        placeholder="Type a message… (Enter to send, Shift+Enter for newline)"
+        rows="1"
+        aria-label="Chat input"
+      ></textarea>
+      <button id="sendBtn" class="send-btn" aria-label="Send message">
+        Send
+      </button>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
